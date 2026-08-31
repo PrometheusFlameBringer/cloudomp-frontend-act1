@@ -3,6 +3,7 @@ const header = document.getElementById("mainHeader");
 const introduction = document.querySelector(".introduction");
 const headerSearch = document.querySelector(".search-head");
 const searchMain = document.querySelector(".search-main");
+const overlay = document.getElementById("overlay");
 
 const observerH = new IntersectionObserver(
     ([entry]) => {
@@ -81,7 +82,7 @@ function displayBooks(books) {
 // GET ONE BOOK
 async function viewBook(id) {
 
-    try {
+    /*try {
         const response = await fetch(`${API_URL}/books/${id}`);
         const book = await response.json();
 
@@ -107,7 +108,8 @@ async function viewBook(id) {
     catch (error) {
         console.error(error);
         alert("Unable to retrieve book.");
-    }
+    }*/
+   overlay.classList.add("show");
 
 }
 

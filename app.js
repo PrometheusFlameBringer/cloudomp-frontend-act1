@@ -25,11 +25,16 @@ function displayBooks(books) {
         const card = document.createElement("div");
         card.className = "book-card";
         card.innerHTML = `
-            <div class="book-year">${book.year}</div>
-            <h3>${book.title}</h3>
-            <p class="book-author">By: ${book.author}</p>
-            <p class="book-genre">${book.genre}</p>
-            <button onclick="viewBook(${book.id})"> View Details</button>
+            <div class="book-img">
+                <img src="${book.imglink}" alt="${book.title} cover image">
+            </div>
+            <div class="book-info">
+                <h3>${book.title}</h3>
+                <p class="book-author">By: ${book.author}</p>
+                <p class="book-rating">⭐ ${book.rating}</p>
+                <p class="book-genre">Genre: ${book.genre}</p>
+                <button onclick="viewBook(${book.id})"> View Details</button>
+            </div>
         `;
 
         bookList.appendChild(card);

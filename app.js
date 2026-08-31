@@ -1,7 +1,7 @@
 const API_URL = "https://cloudcomp-car-api-test.vercel.app";
 
 
-// GET ALL CARS
+// GET ALL BOOKS
 async function loadBooks() {
     try {
         const response = await fetch(`${API_URL}/books`);
@@ -14,7 +14,6 @@ async function loadBooks() {
         document.getElementById("bookList").innerHTML = "Unable to connect to the API.";
     }
 }
-
 
 // DISPLAY BOOKS
 function displayBooks(books) {
@@ -47,8 +46,12 @@ async function viewBook(id) {
 
         alert(`
             ${book.title}
-           Written by:
+            
+            Written by:
             ${book.author}
+
+            Published by:
+            ${book.publisher}
 
             Year published:
             ${book.year}
@@ -56,8 +59,8 @@ async function viewBook(id) {
             Genre:
             ${book.genre}
 
-            Description:
-            ${book.description}
+            Synopsis:
+            ${book.synopsis}
         `);
     }
     catch (error) {

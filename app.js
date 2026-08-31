@@ -1,5 +1,41 @@
-const API_URL = "https://cloudcomp-car-api-test.vercel.app";
+// TRANSITIONS START
+const header = document.getElementById("mainHeader");
+const introduction = document.querySelector(".introduction");
+const headerSearch = document.querySelector(".search-head");
+const searchMain = document.querySelector(".search-main");
 
+const observerH = new IntersectionObserver(
+    ([entry]) => {
+        if (entry.isIntersecting) {
+            header.classList.remove("scrolled");
+        } else {
+            header.classList.add("scrolled");
+        }
+    },
+    {
+        threshold: .3
+    }
+);
+
+const observerM = new IntersectionObserver(
+    ([entry]) => {
+        if (entry.isIntersecting) {
+            headerSearch.classList.remove("scrolled");
+        } else {
+            headerSearch.classList.add("scrolled");
+        }
+    },
+    {
+        threshold: 0
+    }
+);
+
+observerH.observe(introduction);
+observerM.observe(searchMain);
+// TRANSITIONS END
+
+// API STUFF START
+const API_URL = "https://cloudcomp-car-api-test.vercel.app";
 
 // GET ALL BOOKS
 async function loadBooks() {
@@ -26,7 +62,7 @@ function displayBooks(books) {
         card.className = "book-card";
         card.innerHTML = `
             <div class="book-img">
-                <img src="${book.imglink}" alt="${book.title} cover image">
+                <img src="${book.imgLink}" alt="${book.title} cover image">
             </div>
             <div class="book-info">
                 <h3>${book.title}</h3>
@@ -97,3 +133,4 @@ async function searchBooks() {
 }
 
 loadBooks();
+// API STUFF END

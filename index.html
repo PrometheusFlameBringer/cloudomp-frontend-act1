@@ -10,20 +10,37 @@
 </head>
 
 <body>
-    <header>
+
+    <header id="mainHeader">
         <h2>📖 PUBLISHED ARCHIVE</h2>
 
         <!-- SEARCH -->
-        <section class="search">
+        <section class="search-head">
             <input type="text" id="searchInput" placeholder="Search for a book...">
             <button onclick="searchBooks()"> Search </button>
             <button class="secondary" onclick="loadBooks()"> Show All </button>
         </section>
 
     </header>
-    <main>
 
-        <section>
+    <section class="introduction">
+        <div class="intro-text">
+            <h1>PUBLISHED ARCHIVE</h1>
+            <h3>Looking for books? Find it here!</h3>
+            <p>An archive for published books</p>
+            <p>Powered by REST API</p>
+        </div>
+    </section>
+
+    <main>
+        
+        <section class="search-main">
+            <input type="text" id="searchInput" placeholder="Search for a book...">
+            <button onclick="searchBooks()"> Search </button>
+            <button class="secondary" onclick="loadBooks()"> Show All </button>
+        </section>
+
+        <section id="bookSection">
             <div id="bookList" class="book-list">
                 Loading books...
             </div>
@@ -35,6 +52,8 @@
     <footer>
         <p> Data provided by Published Archive API </p>
     </footer>
+
     <script src="app.js"></script>
+
 </body>
 </html>

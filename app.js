@@ -35,6 +35,12 @@ observerH.observe(introduction);
 observerM.observe(searchMain);
 // TRANSITIONS END
 
+// OVERLAY STUFF START
+function closeOverlay() {
+    overlay.classList.remove("show");
+}
+// OVERLAY STUFF END
+
 // API STUFF START
 const API_URL = "https://cloudcomp-car-api-test.vercel.app";
 
@@ -81,29 +87,12 @@ function displayBooks(books) {
 
 // GET ONE BOOK
 async function viewBook(id) {
-
+    const overlayBox = document.getElementById("overlayBox");
     /*try {
         const response = await fetch(`${API_URL}/books/${id}`);
         const book = await response.json();
 
-        alert(`
-            ${book.title}
-            
-            Written by:
-            ${book.author}
-
-            Published by:
-            ${book.publisher}
-
-            Year published:
-            ${book.year}
-
-            Genre:
-            ${book.genre}
-
-            Synopsis:
-            ${book.synopsis}
-        `);
+        
     }
     catch (error) {
         console.error(error);

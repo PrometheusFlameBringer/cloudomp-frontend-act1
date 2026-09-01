@@ -101,7 +101,13 @@ async function viewBook(id) {
                 <h3>By ${book.author}</h3>
             </div>
             <div class="bookDetails"></div>
-            
+            <div class="bookChars">
+                <h1>Main Characters</h1>
+            </div>
+            <div class="bookLl">
+                <h1>Logline</h1>
+                <h3>${book.logline}</h3>
+            </div>
         `;
 
         const detailsContainer = overlayBox.querySelector(".bookDetails");

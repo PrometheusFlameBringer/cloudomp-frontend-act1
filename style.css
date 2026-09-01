@@ -218,6 +218,26 @@ main {
     height: 80vh;
 }
 
+.titleWauth h1, .titleWauth h3 {
+    margin: 0;
+    margin-top: 1vh;
+}
+
+.bookDetails{
+    margin-top: 3vh;
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+}
+
+.descCard{
+    color: white;
+    background: black;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
 footer {
     text-align: center;
     padding: 30px;

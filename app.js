@@ -88,16 +88,38 @@ function displayBooks(books) {
 // GET ONE BOOK
 async function viewBook(id) {
     const overlayBox = document.getElementById("overlayBox");
-    /*try {
+
+    try {
         const response = await fetch(`${API_URL}/books/${id}`);
         const book = await response.json();
 
-        
+        const bookDetailsList = [["Originally Published",book.year],["Genre",book.genre],["Rating",book.rating],["Publisher",book.publisher],["Publication Place",book.publicationPlace],["Language",book.language],["Audiobook Duration",book.audiobookDuration],["Number of Pages",book.pageNumber],["Estimated Word Count",book.wordCount]];
+
+        overlayBox.innerHTML = `
+            <div class="titleWauth">
+                <h1>${book.title}</h1>
+                <h3>By ${book.author}</h3>
+            </div>
+            <div class="bookDetails"></div>
+            
+        `;
+
+        const detailsContainer = overlayBox.querySelector(".bookDetails");
+        bookDetailsList.forEach(detail => {
+            const card = document.createElement("div");
+            card.className = "descCard";
+            card.innerHTML = `
+                <h4>${detail[0]}</h4>
+                <p>${detail[1]}</p>
+            `;
+
+            detailsContainer.appendChild(card);
+        });
     }
     catch (error) {
         console.error(error);
         alert("Unable to retrieve book.");
-    }*/
+    }
    overlay.classList.add("show");
 
 }

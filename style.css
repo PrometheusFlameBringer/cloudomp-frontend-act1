@@ -238,6 +238,17 @@ main {
     border-radius: 15px;
 }
 
+.bookChars, .bookLl{
+    background: #222;
+    color: white;
+    width: 100%;
+    height: 10vh;
+}
+
+.bookLl{
+    margin-top: 0;
+}
+
 footer {
     text-align: center;
     padding: 30px;

@@ -105,8 +105,8 @@ async function viewBook(id) {
                 <h1>Main Characters</h1>
             </div>
             <div class="bookLl">
-                <h1>Logline</h1>
-                <h3>${book.logline}</h3>
+                <h1>Summary</h1>
+                <h3>${book.summary}</h3>
             </div>
         `;
 
